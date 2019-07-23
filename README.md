@@ -15,9 +15,14 @@ docker run -d --name couchbase -p 8091-8094:8091-8094 -p 11210:11210 couchbase
 ```
 docker run -p 4984:4984 --name sync-gateway -d -v /path/to/config/dir:/tmp/config couchbase/sync-gateway /tmp/config/config.json
 ```
- 4. In directory with index.html you need to run http server on port 8888 so CORS check will work. You can run it with python 3 as:
+ 4. In project directory install npm packages:
+```
+npm install --save pouchdb
+npm install --save @hoodie/store-client
+```
+ 5. In project dicrectory run http server which serve index.html on port 8888 so CORS check will work. You can run it with python 3 as:
 ```
 python -m http.server 8888
 ```
 
- 5. Go to http://localhost:8888 and check synchronization between indexDb and Couchbase
+ 6. Go to http://localhost:8888 and check synchronization between indexDb and Couchbase
