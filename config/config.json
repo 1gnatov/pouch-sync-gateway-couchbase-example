@@ -1,0 +1,28 @@
+{
+    "log":["*"],
+    "databases": {
+        "example": {
+            "server": "http://localhost:8091",
+            "bucket": "default",
+	    "username":"sync_gateway",
+            "password":"sync_gateway",
+	    "enable_shared_bucket_access": true,
+	    "import_docs": "continuous",
+            "num_index_replicas": 0,
+            "use_views":true,
+            "users": {
+                "GUEST": {
+                    "disabled": false,
+                    "admin_channels": ["*"]
+                }
+            }
+        }
+    },
+    "CORS": {
+        "Origin": ["http://localhost:8888"],
+        "LoginOrigin": ["http://localhost:8888"],
+        "Headers": ["Content-Type", "Accept", "Authorization", "Origin", "Referer"],
+        "MaxAge": 17280000
+    }
+
+}
